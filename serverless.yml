@@ -1,0 +1,17 @@
+service: eightsleep-recharge-live
+
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+
+functions:
+  checkout-create:
+    handler: api/recharge.create
+    events:
+     - http:
+         path: checkout/create
+         method: post
+         cors: true
+        
